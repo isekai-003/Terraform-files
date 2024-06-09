@@ -12,7 +12,7 @@ resource "aws_instance" "demo-server" {
     subnet_id = aws_subnet.dpp-public-subnet-01.id 
 
     tags = {
-      Name = "example-instance-${count.index}"
+      Name = var.instance_names[count.index]
    }
 }
 
@@ -101,7 +101,7 @@ resource "aws_security_group" "demo-sg" {
 }
 
 resource "aws_vpc" "dpp-vpc" {
-  cidr_block = var.cidr_block
+  cidr_block = "10.1.0.0/16"
   tags = {
     Name = "dpp-vpc"
   }

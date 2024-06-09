@@ -9,16 +9,16 @@ variable "instance_count" {
   type        = number
   default     = 2
 }
-variable "cidr_block" {
-  description = "my vpc cidr block"
-  type        = number
-  default     = 10.1.0.0/16
-}
 
 variable "instance_types" {
   description = "List of instance types to use for the instances"
   type        = list(string)
   default     = ["t2.micro", "t2.small"]
+}
+variable "instance_names" {
+  description = "List of names to use for the instances"
+  type        = list(string)
+  default     = ["instance-one", "instance-two", "instance-three"]
 }
 
 variable "ami_id" {
