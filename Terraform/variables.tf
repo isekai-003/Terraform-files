@@ -7,22 +7,22 @@ variable "region" {
 variable "instance_count" {
   description = "Number of instances to create"
   type        = number
-  default     = 2
+  default     = 3
 }
 
 variable "instance_types" {
   description = "List of instance types to use for the instances"
   type        = list(string)
-  default     = ["t2.micro", "t2.small"]
+  default     = ["t2.medium", "t2.medium","t2.large"]
 }
 variable "instance_names" {
   description = "List of names to use for the instances"
   type        = list(string)
-  default     = ["instance-one", "instance-two", "instance-three"]
+  default     = ["Ansible", "Jenkins-master", "Jenkins-worker"]
 }
 
 variable "ami_id" {
   description = "The AMI ID to use for the instances"
   type        = string
-  default     = "ami-091596285adf7e43a"
+  default     = "ami-066bc6a848a52c1e4"
 }
